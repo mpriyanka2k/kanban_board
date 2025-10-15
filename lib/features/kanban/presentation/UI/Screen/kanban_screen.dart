@@ -89,9 +89,7 @@ class KanbanBoardScreen extends StatelessWidget {
                       }).toList(),
                       onChanged: (newValue) {
                         if (newValue != null) {
-                          setState(() {
-                            selectedStatus = newValue;
-                          });
+                         selectedStatus = newValue;
                         }
                       },
                     ),
