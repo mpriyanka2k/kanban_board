@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:kanbanboard/features/auth/domain/usecases/auth_usecase.dart';
-import 'package:kanbanboard/features/kanban/domain/usecases/task_usecase.dart';
+import 'package:kanbanboard/features/auth/domain/usecases/login_usecase.dart';
+import 'package:kanbanboard/features/auth/domain/usecases/logout_usecase.dart';
+import 'package:kanbanboard/features/auth/domain/usecases/register_usecase.dart';
+import 'package:kanbanboard/features/kanban/domain/usecases/add_task_usecase.dart';
+import 'package:kanbanboard/features/kanban/domain/usecases/delete_task_usecase.dart';
+import 'package:kanbanboard/features/kanban/domain/usecases/get_task_usecase.dart';
+import 'package:kanbanboard/features/kanban/domain/usecases/update_task_status_usecase.dart';
+import 'package:kanbanboard/features/kanban/domain/usecases/update_task_usecase.dart';
 import 'package:kanbanboard/injection.dart';
 import 'features/auth/presentation/bloc/auth_bloc.dart';
 import 'features/kanban/presentation/bloc/task_bloc.dart';
@@ -31,10 +37,10 @@ class MyApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider<AuthBloc>(
-              create: (context) => AuthBloc(sl<AuthUsecase>()),
+              create: (context) => AuthBloc(sl<LoginUsecase>(),sl<LogoutUsecase>(),sl<RegisterUsecase>()),
             ),
             BlocProvider<TaskBloc>(
-              create: (context) => TaskBloc(sl<TaskUsecase>()),
+              create: (context) => TaskBloc(sl<AddTaskUsecase>(),sl<DeleteTaskUsecase>(),sl<GetTaskUsecase>(),sl<UpdateTaskStatusUsecase>(),sl<UpdateTaskUsecase>()),
             ),
           ],
           child: MaterialApp.router(
