@@ -9,8 +9,7 @@ class LoginRequested extends AuthEvent {
 
 class RegisterRequested extends AuthEvent {
   final String email, password;
-  final BuildContext context;
-  RegisterRequested(this.email, this.password,this.context);
+  RegisterRequested(this.email, this.password);
 }
 
 class LogoutRequested extends AuthEvent {
