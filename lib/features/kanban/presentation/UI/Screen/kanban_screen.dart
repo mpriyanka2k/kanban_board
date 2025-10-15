@@ -373,7 +373,7 @@ class KanbanBoardScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          context.read<AuthBloc>().add(LogoutRequested(context));
+                          context.read<AuthBloc>().add(LogoutRequested());
                           context.pop();
                           context.go('/login');
                         },

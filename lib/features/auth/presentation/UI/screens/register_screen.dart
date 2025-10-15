@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kanbanboard/features/auth/presentation/UI/widgets/custom_text_field.dart';
 import 'package:kanbanboard/features/auth/presentation/UI/widgets/registration_form.dart';
 import 'package:kanbanboard/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:kanbanboard/features/auth/presentation/bloc/auth_event.dart';
@@ -24,7 +23,7 @@ class RegisterScreen extends StatelessWidget {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (cxt, state) {
           if (state is RegistrationSuccessful) {
-            context.read<AuthBloc>().add(LogoutRequested(context));
+            context.read<AuthBloc>().add(LogoutRequested());
             context.go('/login');
             ScaffoldMessenger.of(context).showSnackBar(
                SnackBar(

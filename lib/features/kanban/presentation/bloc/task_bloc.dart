@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kanbanboard/features/kanban/domain/entities/task.dart';
-import 'package:kanbanboard/features/kanban/domain/repositories/task_repository.dart';
 import 'package:kanbanboard/features/kanban/presentation/bloc/task_events.dart';
 import 'package:kanbanboard/features/kanban/presentation/bloc/tsak_states.dart';
 

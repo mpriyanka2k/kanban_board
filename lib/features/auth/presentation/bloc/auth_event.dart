@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract class AuthEvent {}
 
 class LoginRequested extends AuthEvent {
@@ -13,6 +11,5 @@ class RegisterRequested extends AuthEvent {
 }
 
 class LogoutRequested extends AuthEvent {
-  final BuildContext context;
-  LogoutRequested(this.context);
+  LogoutRequested();
 }

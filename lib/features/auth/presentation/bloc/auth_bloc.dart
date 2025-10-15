@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:kanbanboard/features/auth/domain/usecases/auth_usecase.dart';
 import 'package:kanbanboard/features/auth/presentation/bloc/auth_event.dart';
 import 'package:kanbanboard/features/auth/presentation/bloc/auth_state.dart';
